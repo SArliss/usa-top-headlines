@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
-
-// https://newsapi.org/v2/top-headlines?country=us&apiKey=492d060bf37d4e54bf1ec609e650f152
+import Footer from './Components/footer';
+import Header from './Components/header';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,6 +12,7 @@ class App extends React.Component {
       selectedNew: [],
       isLoading: false,
       error: "",
+      show: false,
       curTime: new Date().toLocaleString()
     }
   }
@@ -34,6 +35,18 @@ class App extends React.Component {
     }
   }
 
+  showModal = (noticia) => {
+    this.setState({
+      selectedNew: noticia,
+      show: true
+    })
+  }
+
+  hideModal = () => {
+    this.setState({
+      show: false
+    })
+  }
 
   render() {
     const news = this.state.news.articles;
@@ -42,11 +55,7 @@ class App extends React.Component {
     return (
       <div className="App">
 
-        <header>
-          <h1>America Top News</h1>
-          <p>{this.state.curTime}</p>
-          <p>COVID-19 news: <a href="https://www.worldometers.info/coronavirus/country/us/">See the latest coverage of the new coronavirus</a></p>
-        </header>
+        < Header curTime={this.state.curTime}/>
 
         <div className="news-container">
 
@@ -54,7 +63,11 @@ class App extends React.Component {
           {this.state.error && <p>{this.state.error}</p>}
 
           {news && news.map((noticia, index) =>
-            <div key={index} className="single-new">
+            <div
+              key={index}
+              className="single-new"
+              onClick={e => this.showModal(noticia)}
+            >
               <h4>{noticia.source.name.toUpperCase()}</h4>
               <img src={noticia.urlToImage} alt={noticia.source.name} />
               <p>{noticia.title}.</p>
@@ -62,7 +75,15 @@ class App extends React.Component {
           )}
         </div>
 
-        <footer>Copyright © Sinara Arliss 2020</footer>
+        {this.state.show &&
+          <div className="modal">
+            <h4>{this.state.selectedNew.source.name.toUpperCase()}</h4>
+            <img src={this.state.selectedNew.urlToImage} alt={this.state.selectedNew.source.name} />
+            <p>{this.state.selectedNew.title}.</p>
+          </div>
+        }
+
+        < Footer />
 
       </div>
     );
