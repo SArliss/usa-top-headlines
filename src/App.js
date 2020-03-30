@@ -55,7 +55,7 @@ class App extends React.Component {
     return (
       <div className="App">
 
-        < Header curTime={this.state.curTime}/>
+        < Header curTime={this.state.curTime} />
 
         <div className="news-container">
 
@@ -77,9 +77,24 @@ class App extends React.Component {
 
         {this.state.show &&
           <div className="modal">
-            <h4>{this.state.selectedNew.source.name.toUpperCase()}</h4>
-            <img src={this.state.selectedNew.urlToImage} alt={this.state.selectedNew.source.name} />
-            <p>{this.state.selectedNew.title}.</p>
+            <div className="modal-backdrop" onClick={e => this.hideModal()}></div>
+            <div className="modal-content">
+
+              <div className="modal-content-close">
+                <button onClick={e => this.hideModal()}>Close</button>
+              </div>
+
+              <div className="modal-content-text">
+                <h2>{this.state.selectedNew.source.name.toUpperCase()}</h2>
+                <section>
+                  <a href={this.state.selectedNew.url} target="_blank" rel="noreferrer">
+                    <img src={this.state.selectedNew.urlToImage} alt={this.state.selectedNew.source.name} />
+                  </a>
+                </section>
+                <h4>{this.state.selectedNew.title}.</h4>
+                <p>{this.state.selectedNew.description}  <a href={this.state.selectedNew.url} target="_blank" rel="noreferrer">Read full article</a></p>
+              </div>
+            </div>
           </div>
         }
 

@@ -97,3 +97,67 @@ footer img {
   color: white;
   background-color: rgba(36, 36, 36, 0.8);
 }
+
+.modal-backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(36, 36, 36, 0.893);
+  opacity: 0.9;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  width: 60vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: rgb(255, 255, 255);
+  text-align: center;
+  border-radius: 0.2em;
+  border-bottom-style: solid;
+  border-color: grey;
+}
+
+.modal-content img {
+  width: 70%;
+  border-radius: 0.2em;
+}
+
+.modal-content-close {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.modal-content-close button {
+  font-size: 0.9em;
+  font-family: 'Times New Roman', Times, serif;
+  cursor: pointer;
+  padding: 0.6em 0.9em;
+  border: 0.01em solid rgb(203, 203, 203);
+  border-radius: 0.1em;
+  background-color: rgb(245, 245, 245);
+  color: rgb(63, 63, 63);
+  box-shadow: 0.05em 0.05em 0.1em #aaaaaa;
+}
+
+.modal-content-text {
+  padding: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+  .modal-content {
+    width: 80vw;
+  }
+
+  .modal-content img {
+    width: 100%;
+  }
+}
