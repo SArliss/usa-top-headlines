@@ -15,9 +15,10 @@ header {
 
 header h1 {
   text-align: center;
-  font-size: 4em;
+  font-size: 3.5em;
   margin-bottom: 0;
-  font-family: 'Pirata One', cursive;}
+  font-family: 'Pirata One', cursive;
+}
 
 header a {
   color: rgb(37, 37, 38);
@@ -149,7 +150,7 @@ footer img {
 }
 
 .modal-content-text {
-  padding: 1em;
+  padding: 0 1em 2em 1em;
 }
 
 @media only screen and (max-width: 600px) {
@@ -163,6 +164,13 @@ footer img {
 
   .single-new img:hover{
     object-position: center;
+  }
+
+  header h1 {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 0;
+    font-family: 'Pirata One', cursive;
   }
 
 }
