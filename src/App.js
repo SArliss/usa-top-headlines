@@ -67,7 +67,7 @@ class App extends React.Component {
               className="single-new"
               onClick={e => this.showModal(noticia)}
             >
-              <h4>{noticia.source.name.toUpperCase()}</h4>
+              <h4>{noticia.source.name && noticia.source.name.toUpperCase()}</h4>
               <img src={noticia.urlToImage} alt={noticia.source.name} />
               <p>{noticia.title}.</p>
             </div>
@@ -80,12 +80,12 @@ class App extends React.Component {
             <div className="modal-content">
 
             <div className="modal-content-close">
-              <h4>{this.state.selectedNew.author.toUpperCase()}</h4>
+              <h4>{this.state.selectedNew.author && this.state.selectedNew.author.toUpperCase()}</h4>
                 <button onClick={e => this.hideModal()}>Close</button>
               </div>
 
               <div className="modal-content-text">
-                <h2>{this.state.selectedNew.source.name.toUpperCase()}</h2>
+                <h2>{this.state.selectedNew.source.name && this.state.selectedNew.source.name.toUpperCase()}</h2>
                 <section>
                   <a href={this.state.selectedNew.url} target="_blank" rel="noopener noreferrer">
                     <img src={this.state.selectedNew.urlToImage} alt={this.state.selectedNew.source.name} />
