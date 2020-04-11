@@ -143,13 +143,14 @@ footer img {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  overflow: hidden;
 }
 
 .modal-content-close h4 {
   font-size: 1em;
   color:rgb(62, 122, 156);
   margin: 0;
-  padding: 0.7em 0.5em;
+  padding: 1em 0.5em;
   text-align: left;
 }
 
