@@ -80,7 +80,8 @@ class App extends React.Component {
             <div className="modal-backdrop" onClick={e => this.hideModal()}></div>
             <div className="modal-content">
 
-              <div className="modal-content-close">
+            <div className="modal-content-close">
+              <h4>{this.state.selectedNew.author.toUpperCase()}</h4>
                 <button onClick={e => this.hideModal()}>Close</button>
               </div>
 
@@ -91,8 +92,8 @@ class App extends React.Component {
                     <img src={this.state.selectedNew.urlToImage} alt={this.state.selectedNew.source.name} />
                   </a>
                 </section>
-                <h4>{this.state.selectedNew.title}. By {this.state.selectedNew.author}.</h4>
-                <p>{this.state.selectedNew.description}  <a href={this.state.selectedNew.url} target="_blank" rel="noopener noreferrer">Read full article</a></p>
+                <h5>{this.state.selectedNew.title}.</h5>
+                <p>{this.state.selectedNew.description} <a href={this.state.selectedNew.url} target="_blank" rel="noopener noreferrer">Read full article</a></p>
               </div>
             </div>
           </div>

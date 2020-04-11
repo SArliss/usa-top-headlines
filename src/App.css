@@ -120,30 +120,45 @@ footer img {
   transform: translate(-50%,-50%);
   background: rgb(255, 255, 255);
   text-align: center;
-  border-radius: 0.2em;
-  border-bottom-style: solid;
-  border-color: grey;
+  border-radius: 0.5em;
+  border-left: 1em solid;
+  border-color: rgb(67, 134, 173);
+}
+
+.modal-content h5 {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1em;
+  margin: 0.2em auto;
+  width: 80%;
 }
 
 .modal-content img {
   width: 70%;
-  border-radius: 0.2em;
+  border-radius: 0.4em;
 }
 
 .modal-content-close {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   width: 100%;
+}
+
+.modal-content-close h4 {
+  color:rgb(62, 122, 156);
+  margin: 0 0.3em ;
+  padding: 0.7em 1em;
 }
 
 .modal-content-close button {
   font-size: 0.9em;
   font-family: 'Times New Roman', Times, serif;
   cursor: pointer;
-  padding: 0.6em 0.9em;
+  padding: 0.7em 1em;
   border: 0.01em solid rgb(203, 203, 203);
-  border-radius: 0.1em;
+  border-radius: 0.4em;
+  margin: 0.2em 0.08em;
   background-color: rgb(245, 245, 245);
   color: rgb(63, 63, 63);
   box-shadow: 0.05em 0.05em 0.1em #aaaaaa;
