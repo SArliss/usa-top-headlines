@@ -146,9 +146,10 @@ footer img {
 }
 
 .modal-content-close h4 {
+  font-size: 1em;
   color:rgb(62, 122, 156);
-  margin: 0 0.3em ;
-  padding: 0.7em 1em;
+  margin: 0;
+  padding: 0.7em 0.5em;
 }
 
 .modal-content-close button {
@@ -175,6 +176,10 @@ footer img {
 
   .modal-content img {
     width: 100%;
+  }
+
+  .modal-content-close h4 {
+    font-size: 0.7em;
   }
 
   .single-new img:hover{

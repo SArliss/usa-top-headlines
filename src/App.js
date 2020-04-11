@@ -50,8 +50,7 @@ class App extends React.Component {
 
   render() {
     const news = this.state.news.articles;
-    console.log(news);
-
+    
     return (
       <div className="App">
 
