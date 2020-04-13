@@ -50,7 +50,7 @@ class App extends React.Component {
 
   render() {
     const news = this.state.news.articles;
-    
+
     return (
       <div className="App">
 
@@ -79,18 +79,20 @@ class App extends React.Component {
             <div className="modal-backdrop" onClick={e => this.hideModal()}></div>
             <div className="modal-content">
 
-            <div className="modal-content-close">
-              <h4>{this.state.selectedNew.author && this.state.selectedNew.author.toUpperCase()}</h4>
+              <div className="modal-content-close">
+                <h4>{this.state.selectedNew.author && this.state.selectedNew.author.toUpperCase()}</h4>
                 <button onClick={e => this.hideModal()}>Close</button>
               </div>
 
+              <h3>{this.state.selectedNew.source.name && this.state.selectedNew.source.name.toUpperCase()}</h3>
+
+              <div className="modal-image-wrapper">
+                <a href={this.state.selectedNew.url} target="_blank" rel="noopener noreferrer">
+                  <img src={this.state.selectedNew.urlToImage} alt={this.state.selectedNew.source.name} />
+                </a>
+              </div>
+
               <div className="modal-content-text">
-                <h2>{this.state.selectedNew.source.name && this.state.selectedNew.source.name.toUpperCase()}</h2>
-                <section>
-                  <a href={this.state.selectedNew.url} target="_blank" rel="noopener noreferrer">
-                    <img src={this.state.selectedNew.urlToImage} alt={this.state.selectedNew.source.name} />
-                  </a>
-                </section>
                 <h5>{this.state.selectedNew.title}.</h5>
                 <p>{this.state.selectedNew.description} <a href={this.state.selectedNew.url} target="_blank" rel="noopener noreferrer">Read full article</a></p>
               </div>

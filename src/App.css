@@ -134,7 +134,7 @@ footer svg:hover {
   font-weight: 500;
   font-size: 1em;
   margin: 0.2em auto;
-  width: 80%;
+  width: 70%;
 }
 
 .modal-content img {
@@ -144,7 +144,7 @@ footer svg:hover {
 
 .modal-content-close {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   width: 100%;
   overflow: hidden;
@@ -165,7 +165,7 @@ footer svg:hover {
   padding: 0.7em 1em;
   border: 0.01em solid rgb(203, 203, 203);
   border-radius: 0.2em;
-  margin: 0.05em;
+  margin: 0;
   background-color: rgb(245, 245, 245);
   color: rgb(63, 63, 63);
   box-shadow: 0.05em 0.05em 0.1em #aaaaaa;
@@ -175,12 +175,28 @@ footer svg:hover {
   padding: 0 1em 2em 1em;
 }
 
+.modal-content-text a {
+  text-decoration: none;
+  border-bottom: 0.1em solid rgb(62, 122, 156);
+  color: rgb(62, 122, 156);
+}
+
+.modal-content-text a:hover {
+  border-bottom: 0.1em solid rgb(9, 86, 168);
+  color: rgb(9, 86, 168);
+}
+
 @media only screen and (max-width: 600px) {
   .modal-content {
     width: 80vw;
   }
 
   .modal-content img {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .modal-content h5 {
     width: 100%;
   }
 
