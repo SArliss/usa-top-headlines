@@ -52,7 +52,7 @@ class App extends React.Component {
     const news = this.state.news.articles;
 
     return (
-      <div className="App">
+      <div className="App" id="news">
 
         < Header curTime={this.state.curTime} />
 
@@ -100,6 +100,10 @@ class App extends React.Component {
             </div>
           </div>
         }
+
+        <div className="top-sign">
+          <a href="/#news">↑ TOP</a>
+        </div>
 
         < Footer />
 
