@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
-import axios from 'axios';
 import Footer from './Components/footer';
 import Header from './Components/header';
+import getNews from './Services/api-helper';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class App extends React.Component {
 
     try {
       // const news = await axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=492d060bf37d4e54bf1ec609e650f152');
-      const news = await axios.get('https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=us&apiKey=492d060bf37d4e54bf1ec609e650f152');
+      const news = await getNews();
 
       this.setState({
         news: news.data,
